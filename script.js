@@ -13,6 +13,7 @@ const mouseCircleFn = (x, y) => {
 // Animated Circles
 
 const circles = document.querySelectorAll('.circle')
+const mainCircle = document.querySelector('.main-circle')
 const mainImg = document.querySelector('.main-circle img')
 
 let preClientX = 0
@@ -52,13 +53,20 @@ const animatedCircles = (e,x,y) => {
 }
 //End of Animated Circles
 
+mainCircle.addEventListener('mousemove', (e) => {
+    let x = e.clientX
+    let y = e.clientY
+    animatedCircles(e,x,y)
+})
+
+mainCircle.addEventListener('mouseleave', (e) => {
+    
+})
 
 document.body.addEventListener('mousemove', (e) => {
     let x = e.clientX
     let y = e.clientY
-
     mouseCircleFn(x, y)
-    animatedCircles(e,x,y)
 })
 
 document.body.addEventListener('mouseleave', () => {
@@ -88,6 +96,27 @@ mainBtns.forEach(btn => {
 })
 
 // End of Main Buttons
+
+// Navigation
+const menuIcon = document.querySelector('.menu-icon')
+const navbar = document.querySelector('.navbar')
+
+document.addEventListener('scroll', () => {
+    menuIcon.classList.add('show-menu-icon')
+    navbar.classList.add('hide-navbar')
+
+    if(window.scrollY === 0) {
+        menuIcon.classList.remove('show-menu-icon')
+        navbar.classList.remove('hide-navbar')
+    }
+})
+
+
+menuIcon.addEventListener('click', () => {
+    menuIcon.classList.remove('show-menu-icon')
+    navbar.classList.remove('hide-navbar')
+})
+// End of Navigation
 
 // About Me Text
 const aboutMeText = document.querySelector('.about-me-text')
@@ -266,6 +295,41 @@ formInputs.forEach(input => {
 })
 })
 
-
 // End of Form
+
+
+// Slideshow
+
+const slideshow = document.querySelector('.slideshow')
+
+setInterval(() => {
+
+    const firstIcon = slideshow.firstElementChild
+
+    firstIcon.classList.add('faded-out')
+
+    const thirdIcon = slideshow.children[3]
+
+    thirdIcon.classList.add('light')
+
+    thirdIcon.previousElementSibling.classList.remove('light')
+
+    setTimeout(() => {
+
+        slideshow.removeChild(firstIcon)
+
+        slideshow.appendChild(firstIcon)
+
+        setTimeout(() => {
+
+            firstIcon.classList.remove('faded-out')
+
+        }, 500)
+
+    }, 500)
+
+}, 3000)
+
+// End of Slideshow
+
 // End of Section 5
