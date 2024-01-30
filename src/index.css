@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .align-element {
+        @apply mx-auto max-w-7xl px-8
+    }
+    /* components 是一个层的名称，在 Tailwind 中通常有三种层：base、components 和 utilities。
+    在这里，components 层是用来定义可重用的 UI 组件的样式。 */
+    /* @apply mx-auto max-w-7xl px-8表示将 mx-auto max-w-7xl px-8这些类打包进 align-element这个类。 */
+}
