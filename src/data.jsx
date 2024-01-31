@@ -40,7 +40,7 @@ export const projects = [
     img: cityViewFinderImg01,
     url: 'https://city-view-finder.netlify.app/',
     github: 'https://github.com/WenYuan77/City-View-Finder',
-    title: 'CityView Finder',
+    title: 'City View Finder',
     text: 
       <>
         <strong>Summary:</strong> A web application created using JavaScript, HTML, and CSS, combined with an API, which allows users to see photos of a city by entering the city's name.
