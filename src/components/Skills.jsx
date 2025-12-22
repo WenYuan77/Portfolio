@@ -6,11 +6,11 @@ import SkillsCard from './SkillsCard'
 
 const Skills = () => {
   return (
-    <section className='py-20 align-element' id='skills'>
-        <SectionTitle text='tech stack'/>
-        <div className='py-16 grid gap-8 md:grid-cols-2 lg:grid-cols-3'>  
+    <section className='py-12 sm:py-16 md:py-20 align-element' id='skills'>
+        <SectionTitle text='Tech Stack'/>
+        <div className='py-8 sm:py-12 md:py-16 grid gap-6 sm:gap-8 md:grid-cols-2'>  
         {/* grid默认横向排列 */}
-        {/* 这是将每个元素都编程网格，然后在中等/大型屏幕尺寸的的时候一共分成2/3列。每一列里面可能装多个网格。*/}
+        {/* 现在只有2个技能卡片：Data Analysis（重点）和 Web Development（Freelancing） */}
             {skills.map((skill) => {
                 return <SkillsCard key={skill.id} {...skill}/>     
                 // {...skill}意为复制该object（或array）的所有内容。
