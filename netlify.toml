@@ -1,6 +1,7 @@
 # Static site: no build step, publish the repository root.
 [build]
   publish = "."
+  command = "echo 'Static site: nothing to build'"
 
 [build.environment]
   NODE_VERSION = "22"
